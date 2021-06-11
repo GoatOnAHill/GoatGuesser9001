@@ -1,0 +1,78 @@
+import time
+inputs = ["y", "n"]
+def check_input (user_input):
+    global new_inputs
+    checked_input = input(user_input).strip().lower()
+    while checked_input not in inputs:
+        checked_input = input("Sorry, I didn't catch that.\n>").strip().lower()
+    else:
+      return checked_input
+def questionZero():
+  print("Welcome to goatguesser9001")
+  time.sleep(2)
+  print("Please choose a type of goat from regular, sheep, giraffe, hyena, crow, owl, dolphin or squid")
+  time.sleep(2)
+  reply = check_input("Are you ready?\n(y/n)\n>")
+  if reply == "y":
+    questionOne()
+  else:
+   questionZero()
+def questionOne ():
+  reply = check_input("Does this goat live on land?\n(y/n)\n>")
+  if reply == "y":
+    questionTwo()
+  else:
+    questionFive()
+def questionTwo():
+  reply = check_input("Does this goat prefer hotter climates?\n(y/n)\n>")
+  if reply == "y":
+    questionFour()
+  else:
+    questionThree()
+def questionThree():
+  reply = check_input("Is this goat fluffy?\n(y/n)\n>")
+  if reply == "y":
+    print("It's a cloud goat.")
+    replay()
+  else:
+   print("It's a proper goat.")
+   replay()
+def questionFour():
+  reply = check_input("Does this goat eat meat?\n(y/n)\n>")
+  if reply == "y":
+    print("It's a laugh goat.")
+    replay()
+  else:
+   print("It's a tall goat.")
+   replay()
+def questionFive():
+  reply = check_input("Does this goat have feathers?\n(y/n)\n>")
+  if reply == "y":
+    questionSix()
+  else:
+   questionSeven()
+def questionSix():
+  reply = check_input("Is this goat nocturnal?\n(y/n)\n>")
+  if reply == "y":
+    print("It's an stare goat.")
+    replay()
+  else:
+   print("It's a scavenger goat.")
+   replay()
+def questionSeven():
+  reply = check_input("Does this goat have a spine?\n(y/n)\n>")
+  if reply == "y":
+    print("It's a sea-dog goat.")
+    replay()
+  else:
+   print("It's a ink goat.")
+   replay()
+def replay():
+    time.sleep(2)
+    reply = check_input("Do you want to play again?\n(y/n)\n>")
+    if reply == "y":
+        questionZero()
+    else:
+        time.sleep(2)
+        print("Thanks for playing!")
+questionZero()
